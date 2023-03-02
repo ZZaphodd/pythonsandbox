@@ -82,7 +82,7 @@ def parseFnguideFinance(content):
 
 
     for v in list(zip(손익quarter헤더,당기순이익quarter))[1:-1]:
-        result["당기순이익_"+v[0].text] = v[1].text
+        result["당기순이익_"+v[0].text] = v[1].text.replace(",", "")
         # print(v)
 
     대차quarter헤더 = None
@@ -101,8 +101,8 @@ def parseFnguideFinance(content):
                 부채quarter = trs.select('th, td')
     
     for v in list(zip(대차quarter헤더, 유동자산quarter, 부채quarter))[1:-1]:
-        result["유동자산_"+v[0].text] = v[1].text
-        result["부채_"+v[0].text] = v[2].text           
+        result["유동자산_"+v[0].text] = v[1].text.replace(",", "")
+        result["부채_"+v[0].text] = v[2].text.replace(",", "")      
         # print(v)
 
     return result
