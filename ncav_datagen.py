@@ -36,7 +36,7 @@ if __name__ == '__main__':
         
         with mp.Pool(processes = mp.cpu_count()) as pool:
             # dictList = pool.map(code_to_dict, list(krxStocks['code']))
-            dictList = pool.map(code_to_dict, list(krxStocks['code'])[:20])
+            dictList = pool.map(code_to_dict, list(krxStocks['code']))
 
         collected = pd.DataFrame.from_records(dictList)
         print(collected)

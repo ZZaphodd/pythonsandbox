@@ -1,3 +1,4 @@
 *.pyc
+/*.tsv
 __pycache__/
 derived/
