@@ -121,6 +121,7 @@ def parseFnguideSnapshot(content):
     result['업종'] = html.select('#compBody > div.section.ul_corpinfo > div.corp_group1 > p > span.stxt.stxt2')[0].get_text()
     result['PER'] = html.select('#corp_group2 > dl:nth-child(1) > dd')[0].get_text()
     result['PBR'] = html.select('#corp_group2 > dl:nth-child(4) > dd')[0].get_text()    
+    result['거래소'] = html.select('#compBody > div.section.ul_corpinfo > div.corp_group1 > p > span.stxt.stxt1')[0].get_text()
 
     # marketcap
     for th in html.select('th'):
